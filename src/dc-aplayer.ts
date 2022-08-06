@@ -306,7 +306,6 @@ export class DCAplayer extends LitElement {
       bottom: 0;
       left: 0;
       width: 100%;
-      max-height: 10vh;
 
       --lightness-progress-bar: 53%;
       --color-progress-bar-body: hsl(0deg 79% var(--lightness-progress-bar));
