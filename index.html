@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💽</text></svg>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo: aplayer - an audio player element</title>
+    <link rel="stylesheet" href="./src/index.css" />
+    <script type="module" src="/src/dc-aplayer.ts"></script>
+  </head>
+  <body>
+    <main>
+      <h2>Audio samples</h2>
+      <ul>
+        <li><span>Audio 1</span> <button onclick="loadAudioMedia('https://upload.wikimedia.org/wikipedia/commons/4/42/Room_reverb_effect_in_a_mix_-_longer_funk_example.ogg', 'lorem audio test', 'Season 9, episode 15')">Play</button></li> 
+        <li><span>Audio 2</span> <button onclick="loadAudioMedia('https://upload.wikimedia.org/wikipedia/commons/b/b5/NST_Arpeggios_C_Audio.wav', 'Mistery track - Truck Truckerson', 'All tracks track something')">Play</button></li> 
+        <li><span>Audio 3</span> <button onclick="loadAudioMedia('https://upload.wikimedia.org/wikipedia/commons/9/9d/Zumbaquezumba.ogg', 'Episode One: a new chop', 'S02E01')">Play</button></li> 
+      </ul>
+    </main>
+    <dc-aplayer id="player" mediaUrl="">
+    </dc-aplayer>
+
+
+    <script>
+      const player = document.getElementById('player')
+      function loadAudioMedia(url, title, subtitle) {
+        player.setAttribute('mediaUrl', url)
+        player.setAttribute('title', title)
+        player.setAttribute('subtitle', subtitle)
+      }
+    </script>
+  </body>
+</html>

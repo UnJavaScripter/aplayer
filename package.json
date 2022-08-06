@@ -1,0 +1,27 @@
+{
+  "name": "dc-aplayer",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/dc-aplayer.es.js",
+  "exports": {
+    ".": "./dist/dc-aplayer.es.js"
+  },
+  "types": "types/dc-aplayer.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "dependencies": {
+    "@polymer/iron-icons": "^3.0.1",
+    "lit": "^2.2.7"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4",
+    "vite": "^3.0.0"
+  }
+}
