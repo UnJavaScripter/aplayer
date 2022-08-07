@@ -133,26 +133,26 @@ export class DCAplayer extends LitElement {
 
       <div class="controls-container">
         <div class="media-control-buttons">
-          <button tabindex="0" @click=${this._rewind} part="button" ?disabled=${!this.ready}>
+          <button tabindex="0" @click=${this._rewind} part="button" ?disabled=${!this.ready} aria-label="rewind audio 5 seconds">
             <iron-icon icon="av:replay-5"></iron-icon>
           </button>
-          <button tabindex="0" @click=${this._togglePlay} part="button" ?disabled=${!this.ready}>
+          <button tabindex="0" @click=${this._togglePlay} part="button" ?disabled=${!this.ready} aria-label="${this.playing ? 'pause' : 'play' } audio">
             ${this.playing ? html`<iron-icon icon="av:pause-circle-filled"></iron-icon>` : html`<iron-icon icon="av:play-circle-outline"></iron-icon>`}
           </button>
-          <button tabindex="0" @click=${this._fastForward} part="button" ?disabled=${!this.ready}>
+          <button tabindex="0" @click=${this._fastForward} part="button" ?disabled=${!this.ready} aria-label="fast forward audio 5 seconds">
             <iron-icon icon="av:forward-5"></iron-icon>
           </button>
         </div>
 
         <div class="media-info">
           <div class="meta">
-            <div class="title">${this.getAttribute('title')}</div>
-            <div class="season">${this.getAttribute('subtitle')}</div>
+            <div class="title" tabindex="0" aria-label="clip title: ${this.getAttribute('title')}">${this.getAttribute('title')}</div>
+            <div class="season" tabindex="0" aria-label="clip subtitle: ${this.getAttribute('subtitle')}">${this.getAttribute('subtitle')}</div>
           </div>
-          <div class="elapsed-time">
-            <span>${this._secondsToTime(this.audioElem?.currentTime)}</span>
-            <span class="separator">/</span>
-            <span>${this._secondsToTime(this.audioClipDuration)}</span>
+          <div class="elapsed-time" tabindex="0">
+            <span aria-label="Current play time is ${Math.floor(this.audioElem?.currentTime)} seconds">${this._secondsToTime(this.audioElem?.currentTime)}</span>
+            <span class="separator" role="separator">/</span>
+            <span aria-label="total play time ${Math.floor(this.audioClipDuration)} seconds">${this._secondsToTime(this.audioClipDuration)}</span>
           </div>
         </div>
       </div>
